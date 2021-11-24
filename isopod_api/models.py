@@ -53,7 +53,7 @@ class GetdataT(Base):
 
     id = Column(Integer,primary_key=True,index=True)
     Temperature = Column(String(100))
-    Datetime = Column(String(100))
+    Datetime = Column(DateTime,default=datetime.datetime.now(tz))
 
 class GetdataH(Base):
 
@@ -61,7 +61,7 @@ class GetdataH(Base):
 
     id = Column(Integer,primary_key=True,index=True)
     Humidity = Column(String(100))
-    Datetime = Column(String(100))
+    Datetime = Column(DateTime,default=datetime.datetime.now(tz))
 
 class GetdataSTFA(Base):
 
@@ -69,7 +69,7 @@ class GetdataSTFA(Base):
 
     id = Column(Integer,primary_key=True,index=True)
     Statusfan = Column(String(100))
-    Datetime = Column(String(100))
+    Datetime = Column(DateTime,default=datetime.datetime.now(tz))
 
 class GetdataSTFG(Base):
 
@@ -77,5 +77,5 @@ class GetdataSTFG(Base):
 
     id = Column(Integer,primary_key=True,index=True)
     Statusfoggy = Column(String(100))
-    Datetime = Column(String(100))
+    Datetime = Column(DateTime,default=datetime.datetime.now(tz))
 

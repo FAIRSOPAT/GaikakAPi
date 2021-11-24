@@ -12,6 +12,7 @@ class user2(BaseModel):
     username : str
     password : str
     name : str
+    gender : str
     email : str
     phone : str
 

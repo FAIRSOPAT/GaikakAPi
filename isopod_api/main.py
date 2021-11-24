@@ -21,7 +21,7 @@ def get_db():
 @app.post('/Create/Register', status_code = status.HTTP_201_CREATED, tags=['Create All'])
 def create_account(request: schemas.user2, db : Session = Depends(get_db)):
     newaccount = models.Register( username=request.username, password=request.password,
-                                  name=request.name, email=request.email, phone=request.phone )
+                                  name=request.name, gender=request.gender, email=request.email, phone=request.phone )
     db.add(newaccount)
     db.commit()
     db.refresh(newaccount)

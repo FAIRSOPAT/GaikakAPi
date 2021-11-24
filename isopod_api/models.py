@@ -14,6 +14,7 @@ class Register(Base):
     username = Column(String(100))
     password = Column(String(100))
     name = Column(String(100))
+    gender = Column(String(100))
     email = Column(String(100))
     phone = Column(String(100))
 
@@ -40,18 +41,41 @@ class ShowMonitor(Base):
     DateTime = Column(DateTime,default=datetime.datetime.now(tz))
 
 class Imagesave(Base):
-    
+
     __tablename__ = "Imagesave"
 
     id = Column(Integer,primary_key=True,index=True)
     Namepic = Column(String(100))
 
-class Getdata(Base):
-    
-    __tablename__ = "Getdata"
+class GetdataT(Base):
+
+    __tablename__ = "GetdataT"
 
     id = Column(Integer,primary_key=True,index=True)
     Temperature = Column(String(100))
+    Datetime = Column(String(100))
+
+class GetdataH(Base):
+
+    __tablename__ = "GetdataH"
+
+    id = Column(Integer,primary_key=True,index=True)
     Humidity = Column(String(100))
+    Datetime = Column(String(100))
+
+class GetdataSTFA(Base):
+
+    __tablename__ = "GetdataSTFA"
+
+    id = Column(Integer,primary_key=True,index=True)
     Statusfan = Column(String(100))
+    Datetime = Column(String(100))
+
+class GetdataSTFG(Base):
+
+    __tablename__ = "GetdataSTFG"
+
+    id = Column(Integer,primary_key=True,index=True)
     Statusfoggy = Column(String(100))
+    Datetime = Column(String(100))
+

@@ -152,13 +152,12 @@ def show_id(id, db : Session = Depends(get_db),):
 
     return blogs
 
-@app.get('/Show/Register/Last Record', tags=['Show Register'])
+@app.get('/Show/Register/Lastrecord', tags=['Show Register'])
 def show_last(db : Session = Depends(get_db)):
-    blogs = db.query(models).order_by(models.Register.desc()).first()
+    blogs = db.query(models.Register).filter(models.Register.desc()).all()
 
     return blogs
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 @app.get('/Show/IsopodBox', tags=['Show Isopod Box'])
 def allDetailBox(db : Session = Depends(get_db)):
@@ -178,56 +177,10 @@ def allNameImage(db : Session = Depends(get_db)):
 
     return blogs
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-@app.get('/Show/DataT', tags=['Show Data'])
+@app.get('/Show/Data', tags=['Show Data'])
 def allData(db : Session = Depends(get_db)):
-    blogs = db.query(models.GetdataT).all()
+    blogs = db.query(models.Getdata).all()
 
     return blogs
-
-@app.get('/Show/DataT/One', tags=['Show Data'])
-def show_last(db : Session = Depends(get_db)):
-    blogs = db.query(models).order_by(models.GetdataT.desc()).first()
-
-    return blogs
-
-
-@app.get('/Show/DataH', tags=['Show Data'])
-def allData(db : Session = Depends(get_db)):
-    blogs = db.query(models.GetdataH).all()
-
-    return blogs
-
-@app.get('/Show/DataH/One', tags=['Show Data'])
-def show_last(db : Session = Depends(get_db)):
-    blogs = db.query(models).order_by(models.GetdataH.desc()).first()
-
-    return blogs
-
-@app.get('/Show/DataSTFA', tags=['Show Data'])
-def allData(db : Session = Depends(get_db)):
-    blogs = db.query(models.GetdataSTFA).all()
-
-    return blogs
-
-@app.get('/Show/DataSTFA/One', tags=['Show Data'])
-def show_last(db : Session = Depends(get_db)):
-    blogs = db.query(models).order_by(models.GetdataSTFA.desc()).first()
-
-    return blogs
-
-@app.get('/Show/DataSTFG', tags=['Show Data'])
-def allData(db : Session = Depends(get_db)):
-    blogs = db.query(models.GetdataSTFG).all()
-
-    return blogs
-
-@app.get('/Show/DataSTFG/One', tags=['Show Data'])
-def show_last(db : Session = Depends(get_db)):
-    blogs = db.query(models).order_by(models.GetdataSTFG.desc()).first()
-
-    return blogs
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 

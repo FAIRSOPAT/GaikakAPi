@@ -4,8 +4,8 @@ from sqlalchemy.orm import sessionmaker
 import pymysql.cursors
 import pymysql
 
-# engine = create_engine("mysql+pymysql://phpmyadmin:Isopod123@127.0.0.1:3306/Test")
-engine = create_engine("mysql+pymysql://root:@127.0.0.1:3306/isopod")
+engine = create_engine("mysql+pymysql://phpmyadmin:Isopod123@127.0.0.1:3306/IsopodAPI")
+#engine = create_engine("mysql+pymysql://root:@127.0.0.1:3306/isopod")
 
 Session = sessionmaker(bind = engine)
 session = Session()
